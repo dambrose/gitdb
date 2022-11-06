@@ -1,5 +1,6 @@
 type Query {
 	hello: String
+	read(path: String!): String
 	jwtVerify(token:String!): User
 }
 
