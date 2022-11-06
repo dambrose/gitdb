@@ -1,7 +1,21 @@
 type Query {
 	hello: String
-	read(path: String!): String
 	jwtVerify(token:String!): User
+	read(path: String!): String
+	ls(path: String!, recursive: Boolean!): [Thing!]!
+}
+
+type Thing {
+	type: ThingType
+	hash: String!
+	name: String!
+	path: String!
+	children: [Thing]
+}
+
+enum ThingType {
+	file
+	folder
 }
 
 type User {

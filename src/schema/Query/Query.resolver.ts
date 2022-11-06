@@ -11,6 +11,9 @@ export default {
 		},
 		read(_, {path}) {
 			return db.cat(path);
+		},
+		ls(_, {path, recursive}) {
+			return db.ls(path, recursive);
 		}
 	}
 };
