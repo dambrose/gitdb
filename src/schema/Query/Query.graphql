@@ -2,7 +2,14 @@ type Query {
 	hello: String
 	jwtVerify(token:String!): User
 	read(path: String!): String
-	ls(path: String!, recursive: Boolean!): [Thing!]!
+	ls(path: String!, recursive: Boolean): [Thing!]!
+
+	jwtVerify(token:String!): User
+}
+
+type User {
+	name: String!
+	email: String!
 }
 
 type Thing {
