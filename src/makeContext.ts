@@ -7,6 +7,8 @@ type MakeContextParams = {
 }
 
 export default async ({ctx, connectionParams}: MakeContextParams) => {
+	const auth = ctx.get('authorization');
+	if (!auth) return {};
 
 	const token = parseAuthorization(ctx.get('authorization'));
 	if (token)
