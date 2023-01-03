@@ -3,7 +3,8 @@ type Mutation {
 	upload(files: [Upload!]!): [File]
 	jwtSign(name:String!,email:String!): String
 
-	save(path: String!, file: Upload!): Boolean
+	saveFile(path: String!, file: Upload!): Boolean
+	save(path: String!, data: String!): Boolean
 	mkdir(path: String!): Boolean
 	rmdir(path: String!): Boolean
 	rm(path: String!): Boolean
