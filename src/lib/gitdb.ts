@@ -250,7 +250,7 @@ export default async (repository: string, branch: string): Promise<GitDb> => {
 
 		const dir: string = dirname(filePath);
 
-		if (dir !== '.' && await gitType(dir) !== 'tree')
+		if (await gitType(dir) !== 'tree')
 			throw new Error(`save: "${filePath}", directory "${dir}" does not exist`);
 
 		const stream: NodeJS.ReadableStream = typeof data === 'string' ? stringToStream(data) : data;
