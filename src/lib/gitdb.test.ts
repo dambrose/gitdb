@@ -1,6 +1,6 @@
 import {describe, expect, test} from '@jest/globals';
 
-import git from '../src/lib/gitdb.js';
+import git from './gitdb.js';
 
 describe('gitdb', () => {
 
@@ -8,7 +8,7 @@ describe('gitdb', () => {
 		const db = await git('/Users/dennis/db.git', 'main');
 		// console.log(await db.modified('foo'));
 // 		// console.log(await db.modified('chuckr/hello.txt'));
-		console.log(await db.type(''));
+// 		console.log(await db.type(''));
 // 		// console.log(await db.rmdir('\\-bazz'));
 // 		// await db.save('hello chuck R!','chuckr/hello.txt');
 // 		// await db.cp('chuck/hello.txt','chuck/hello2.txt');

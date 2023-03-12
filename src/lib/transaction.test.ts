@@ -1,6 +1,6 @@
 import {describe, expect, test} from '@jest/globals';
 
-import transaction, {transactions} from '../src/lib/transaction.js';
+import transaction, {transactions} from './transaction.js';
 
 describe('transaction', () => {
 

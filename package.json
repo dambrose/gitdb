@@ -1,7 +1,8 @@
 {
-	"name": "graphql",
+	"name": "gitdb",
 	"version": "1.0.0",
 	"main": "src/index.ts",
+	"author": "Dennis Ambrose <dennisa@magnatag.com",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
