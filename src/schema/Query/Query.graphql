@@ -3,8 +3,6 @@ type Query {
 	jwtVerify(token:String!): User
 	read(path: String!): String
 	ls(path: String!, recursive: Boolean): [Thing!]!
-
-	jwtVerify(token:String!): User
 }
 
 type User {
@@ -23,9 +21,4 @@ type Thing {
 enum ThingType {
 	file
 	folder
-}
-
-type User {
-	name: String!
-	email: String!
 }

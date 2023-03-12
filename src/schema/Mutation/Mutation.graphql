@@ -10,6 +10,4 @@ type Mutation {
 	rm(path: String!): Boolean
 	cp(fromPath: String!, toPath: String!): Boolean
 	mv(fromPath: String!, toPath: String!): Boolean
-
-	jwtSign(name:String!,email:String!): String
 }

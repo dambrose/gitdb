@@ -3,7 +3,6 @@ import handleUpload from '../../handleUpload.js';
 import {sign} from '../../lib/jwt.js';
 import db from '../db.js';
 import transaction from '../../lib/transaction.js';
-import {sign} from '../../lib/jwt.js';
 
 export default {
 	Mutation: {
@@ -66,10 +65,6 @@ export default {
 				await db.mv(fromPath, toPath);
 			});
 			return true;
-		},
-
-		jwtSign(_, {name, email}) {
-			return sign({name, email});
 		}
 	}
 };
