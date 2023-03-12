@@ -17,6 +17,7 @@ export default {
 			return sign({name, email});
 		},
 		async saveFile(_, {path, file}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			const {createReadStream} = await file;
 			await transaction(async () => {
 				await db.setUser(name, email);
@@ -25,6 +26,7 @@ export default {
 			return true;
 		},
 		async save(_, {path, data}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			await transaction(async () => {
 				await db.setUser(name, email);
 				await db.save(path, data);
@@ -32,6 +34,7 @@ export default {
 			return true;
 		},
 		async mkdir(_, {path}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			await transaction(async () => {
 				await db.setUser(name, email);
 				await db.mkdir(path);
@@ -39,6 +42,7 @@ export default {
 			return true;
 		},
 		async rmdir(_, {path}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			await transaction(async () => {
 				await db.setUser(name, email);
 				await db.rmdir(path);
@@ -46,6 +50,7 @@ export default {
 			return true;
 		},
 		async rm(_, {path}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			await transaction(async () => {
 				await db.setUser(name, email);
 				await db.rm(path);
@@ -53,6 +58,7 @@ export default {
 			return true;
 		},
 		async cp(_, {fromPath, toPath}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			await transaction(async () => {
 				await db.setUser(name, email);
 				await db.cp(fromPath, toPath);
@@ -60,6 +66,7 @@ export default {
 			return true;
 		},
 		async mv(_, {fromPath, toPath}, {name, email}) {
+			if (!name || !email) throw new Error('not authenticated');
 			await transaction(async () => {
 				await db.setUser(name, email);
 				await db.mv(fromPath, toPath);
